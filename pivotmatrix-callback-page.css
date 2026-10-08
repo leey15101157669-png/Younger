@@ -1,0 +1,10 @@
+/* Service-directory external callback layout. */
+.callback-page{background:var(--color-surface)}
+.callback-page>.destination-back{grid-column:1/-1;margin:18px 20px 0}
+.callback-page-header{grid-column:1/-1;padding:20px 22px;margin:0!important;border-bottom:1px solid var(--color-rule)}
+.callback-page-header h1{font-size:20px}
+.callback-page-header p{margin:6px 0 0}
+.callback-sidebar header{margin:0 0 16px}
+.callback-sidebar header span{font-size:12px;color:var(--color-ink-faint)}
+.callback-item strong{font-weight:500}
+@media(max-width:760px){.callback-page-header{padding:16px}}

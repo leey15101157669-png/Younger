@@ -1,0 +1,49 @@
+.catalog-top-actions{display:flex;align-items:center;justify-content:flex-end;gap:16px;margin-inline-start:auto;flex-wrap:wrap}
+.brand-area{grid-template-columns:minmax(0,1fr) 28px 16px;gap:8px;min-height:72px;padding:16px 14px}
+.brand-area .brand-lockup{min-width:0;gap:9px}
+.brand-area .brand-mark{width:32px;height:32px;border-radius:10px}
+.brand-area .brand-mark svg{width:22px;height:22px}
+.brand-area .brand-name{font-size:18px;font-weight:600;letter-spacing:-.035em;line-height:1.2}
+.brand-area .brand-message-button{width:28px;height:32px;min-height:32px;padding:3px;justify-content:center;border:0;background:transparent;margin:0}
+.brand-area .brand-message-button svg{width:22px;height:22px;stroke-width:1.6}
+.brand-area .brand-collapse-icon{width:16px;height:24px;color:var(--color-ink-faint)}
+.brand-area .brand-collapse-icon svg{width:14px;height:14px;stroke-width:1.8}
+.design-document-links{position:fixed;right:24px;bottom:20px;z-index:30;display:flex;gap:8px}
+.requirements-corner{padding:8px 12px;border:1px solid var(--color-rule);border-radius:var(--radius-sm);background:var(--color-surface);box-shadow:0 2px 8px #0000000a}
+.account-menu-trigger{border:0;padding:0;background:transparent;text-align:left;color:inherit;cursor:pointer;font-family:inherit;font-weight:600}
+.personal-menu{position:fixed;inset:auto;margin:0;width:min(280px,calc(100vw - 16px));max-height:calc(100dvh - 32px);overflow:auto;padding:8px;border:1px solid var(--color-rule-strong);border-radius:16px;background:var(--color-surface);color:var(--color-ink);box-shadow:0 12px 36px #00000026}
+.personal-menu::backdrop{background:transparent;pointer-events:none}
+.personal-menu header{display:flex;align-items:center;gap:12px;margin:0 0 8px;padding:14px;border-radius:11px;background:var(--color-shell-sidebar-hover)}
+.personal-menu h2{margin:0;font-size:16px;font-weight:600}
+.personal-menu header p{margin:4px 0 0;font-size:12px;color:var(--color-ink-soft)}
+.personal-menu-avatar{display:grid;place-items:center;width:32px;height:36px}
+.personal-menu svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.personal-menu-avatar svg{width:26px;height:26px}
+.personal-menu nav{display:grid;gap:2px}
+.personal-center-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;max-width:900px;margin-top:24px}
+.personal-center-links a{padding:24px;border:1px solid var(--color-rule);border-radius:12px;color:var(--color-ink);background:var(--color-surface);text-decoration:none}
+.personal-center-links a:hover{background:var(--color-shell-sidebar-hover)}
+.personal-menu a,.personal-menu button{display:flex;align-items:center;gap:12px;padding:12px 14px;min-height:44px;border-radius:8px;color:inherit;text-decoration:none;font:inherit;font-size:14px;width:100%;text-align:left;border:0;background:transparent;cursor:pointer}
+.personal-menu a:hover,.personal-menu button:hover{background:var(--color-shell-sidebar-active)}
+.personal-menu .personal-help-links,.personal-version-row{margin-top:8px;padding-top:8px;border-top:1px solid var(--color-rule)}
+.personal-version-row span{margin-left:auto;color:var(--color-ink-soft);font-size:12px}
+.personal-menu button:focus-visible{outline:2px solid var(--color-focus);outline-offset:-2px}
+.personal-info{width:min(440px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:24px;border:1px solid var(--color-rule);border-radius:14px;background:var(--color-surface);color:var(--color-ink)}
+.personal-info::backdrop{background:#14202e33}
+.personal-info header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.personal-info h2{margin:0;font-size:18px}
+.personal-info header button{border:0;background:transparent;color:inherit;cursor:pointer;font-size:24px}
+.personal-info p,.personal-info li{font-size:14px;line-height:1.8}
+.personal-menu a:focus-visible,.account-menu-trigger:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
+.catalog-message-button{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:7px 12px;border:1px solid var(--color-rule);border-radius:var(--radius-sm);background:var(--color-surface);color:var(--color-ink-soft);font:inherit;font-size:13px;cursor:pointer}
+.catalog-message-button svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.message-center{position:fixed;inset:0 0 0 auto;margin:0;width:min(420px,100vw);height:100dvh;max-height:100dvh;max-width:100vw;box-sizing:border-box;border:0;border-left:1px solid var(--color-rule);padding:24px;background:var(--color-surface);color:var(--color-ink)}
+.message-center::backdrop{background:rgba(20,30,45,.18)}
+.message-center header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.message-center h2{font-size:20px;margin:0;font-weight:600}
+.message-center button{font:inherit;font-size:13px;padding:7px 12px;background:transparent;border:1px solid var(--color-rule);border-radius:var(--radius-sm);color:var(--color-ink-soft);cursor:pointer}
+.message-center nav{display:flex;gap:8px;border-bottom:1px solid var(--color-rule);padding-bottom:14px}
+.message-center [aria-pressed=true]{background:var(--color-shell-sidebar-active);color:var(--color-ink);border-color:transparent}
+.message-empty{text-align:center;padding:72px 8px;color:var(--color-ink-soft);font-size:14px}
+.message-empty p{color:var(--color-ink-faint);font-size:12px;line-height:1.8}
+.catalog-message-button:focus-visible,.message-center button:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}

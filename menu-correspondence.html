@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>新旧菜单对应说明 · PivotMatrix</title>
+  <link rel="stylesheet" href="tokens.css?v=5aa9710f551ea47b">
+  <link rel="stylesheet" href="menu-correspondence.css?v=5aa9710f551ea47b">
+</head>
+<body>
+  <main>
+    <header class="document-nav"><span>PivotMatrix · 需求说明 · 2026-09-09</span></header>
+    <h1>新旧菜单对应说明</h1>
+    <p class="lede">以新版服务目录为主线，明确每个入口的名称、旧系统来源与交互去向。此页仅用于研发评审与交接，不属于产品功能菜单。</p>
+    <aside class="reading-note"><strong>核对口径</strong><p>新版路径以当前原型实际菜单为准；旧系统来源依据已确认调整、用户参考图与已保存的导航结构。“已确认”仅表示归属和名称已确认，不等同于线上权限、数据或接口已完成验证。</p><p>研发实现时，以“交互去向”为准：当前页原型可直接复刻；“独立页签提示”不在本原型内实现业务页；“运营后台保留”仅保留后台入口；“迁移到服务目录”代表后台入口已移除或不再作为主入口。</p></aside>
+    <section class="implementation-summary" aria-labelledby="implementation-title"><h2 id="implementation-title">研发实现口径</h2><div class="implementation-grid">
+      <article><strong>当前页原型</strong><p>服务目录内直接呈现本地页面与交互，如模型资源、IM 渠道、外部回调、系统管理等。</p></article>
+      <article><strong>独立页签说明</strong><p>技能构建需由用户确认后打开技能工厂；数据连接器、数据查询器、业务集成中心及效果评估只展示跳转提示。</p></article>
+      <article><strong>运营后台保留</strong><p>仅保留资源配置、文档与操作手册、Portal 管理、PivotAdmin 与系统配置。</p></article>
+      <article><strong>后台入口已收敛</strong><p>Worker 核心、三方纳管、AI 模型、渠道对接、技能广场，以及客户端设备、安全中心、审计中心不再出现在运营后台。</p></article>
+    </div></section>
+    <section aria-labelledby="decisions-title"><h2 id="decisions-title">本次改版的关键调整</h2><ul>
+      <li>技能构建对应<strong>技能工厂</strong>；点击后先展示说明，再由用户主动在新页签打开。技能管理承接原后台技能广场的管理功能；探索区 Skills 中心保留技能浏览入口。</li>
+      <li>服务目录一级菜单调整为<strong>SOP 应用引擎、企业连接中枢、平台基础资源</strong>；平台基础资源仅保留模型管理、知识资产，模型日志不再放入“使用记录”。</li>
+      <li>企业连接中枢分为<strong>业务连接</strong>与<strong>开放集成</strong>：前者承载数据连接、查询、业务集成，后者承载 MCP 工具、外部回调与智能体集成。</li>
+      <li>三方 Claw、三方 Claude Code 与 A2A 中心归入<strong>企业连接中枢 → 开放集成 → 智能体集成</strong>；后台三方纳管分组已移除。</li>
+      <li>Worker 管理、看板归入<strong>运行实例</strong>；Worker 测试归入<strong>数字分身能力评估</strong>；Worker 价值归入<strong>业务价值分析</strong>。运营后台的 Worker 核心分组已整体删除。</li>
+      <li>镜像、实例模板与实例在服务目录与后台共用原型；<strong>版本管理仅在服务目录展示</strong>，后台资源配置中已删除该入口。</li>
+      <li>后台内容 &amp; 工具仅保留<strong>文档、操作手册</strong>；团队模板、MCP 工具、Coding 技能、技能管理及能力命令库迁入服务目录。</li>
+      <li>服务目录<strong>系统管理</strong>包含组织与成员、客户端管理、安全与审计；Portal 管理和平台级系统配置保留后台。客户端设备、安全中心、审计中心已从后台菜单删除。</li>
+    </ul></section>
+    <section aria-labelledby="evaluation-mapping-title">
+      <h2 id="evaluation-mapping-title">评测板块对应关系</h2>
+      <p>依据最新参考图调整名称与入口；对应旧系统已有功能，并非新增一套评测功能。详细页面原型尚待补充。</p>
+      <table><thead><tr><th>已有系统菜单</th><th>新版评测菜单</th><th>说明</th></tr></thead><tbody>
+        <tr><td>评估套件</td><td>评估套件</td><td>保留原名</td></tr>
+        <tr><td>模板库</td><td>评估器</td><td>按参考图改名</td></tr>
+        <tr><td>批次数据</td><td>评测集</td><td>按参考图改名</td></tr>
+        <tr><td>定时任务</td><td>评测任务</td><td>按参考图改名</td></tr>
+        <tr><td>评测记录</td><td>评测报告</td><td>暂列对应；参考图未明确标注，待确认</td></tr>
+      </tbody></table>
+    </section>
+    <section aria-labelledby="mapping-title">
+      <div class="section-heading"><h2 id="mapping-title">菜单对应清单</h2><span id="summary"></span></div>
+      <div class="filters"><label>搜索菜单<input type="search" id="search" placeholder="例如：技能工厂、企业连接"></label><label>新版区域<select id="area"><option value="">全部区域</option><option>服务目录</option><option>探索</option><option>运营后台</option><option>公共入口</option><option>待归属</option></select></label><label>确认状态<select id="status"><option value="">全部状态</option><option>已确认</option><option>待确认</option></select></label><button id="reset" type="button">重置筛选</button></div>
+      <p id="result-count" role="status"></p>
+      <table><thead><tr><th>新版菜单路径</th><th>已有系统对应菜单</th><th>调整方式</th><th>确认状态 / 说明</th></tr></thead><tbody id="mapping-rows"></tbody></table>
+      <div id="empty" hidden><h3>没有匹配的菜单</h3><p>试试其他关键词，或重置筛选查看全部对应关系。</p></div>
+    </section>
+    <section aria-labelledby="reverse-title"><h2 id="reverse-title">原运营后台菜单去向核对</h2><p id="coverage-summary" role="status"></p><table><thead><tr><th>已有系统菜单</th><th>新版对应入口（共享入口分别列出）</th></tr></thead><tbody id="reverse-rows"></tbody></table></section>
+    <section aria-labelledby="scope-title"><h2 id="scope-title">删除、保留与待确认范围</h2><table><thead><tr><th>事项</th><th>本次处理</th></tr></thead><tbody>
+      <tr><td>运营后台菜单收敛</td><td>Worker 核心整体删除；版本管理、三方纳管、AI 模型、渠道对接、技能广场，以及客户端设备、安全中心、审计中心均不再作为后台入口。</td></tr>
+      <tr><td>应用中心与效果评估</td><td>应用卡片中的能力评估系统已移除；数字分身能力评估保留在服务目录。助手测试在本地原型展示，效果评估仅提示跳转已有页面并单开页签。</td></tr>
+      <tr><td>PivotCreation、PivotInsight</td><td>按需求新增应用卡片；原系统中的一对一菜单来源尚待确认。</td></tr>
+      <tr><td>接口密钥与旧 models.html</td><td>旧页面和服务目录接口密钥入口已移除；模型管理已迁至服务目录模型管理。后台系统配置的“我的 API 凭证”等平台凭证仍保留，不是被删除的入口。</td></tr>
+      <tr><td>认证配置、自定义菜单、外部集成、审计与安全</td><td>保留在运营后台 → 系统管理 → 系统配置，清单已逐项列出。系统审计中心、Coding 项目域审计日志、模型风险审计分别保留，不混为同一项。</td></tr>
+      <tr><td>Agent 纳管与 A2A 中心</td><td>已确认归入企业连接中枢 → 开放集成 → 智能体集成；平台级 A2A 纳管配置保留在系统配置中。</td></tr>
+      <tr><td>外部回调</td><td>已从后台渠道对接迁入企业连接中枢 → 开放集成；页面采用回调入口列表与配置工作区，新增内容仅保存本地草稿。</td></tr>
+      <tr><td>任务编排</td><td>已作为创建智能应用下的独立入口，与职能助手、智能团队并列。用于助手编排，不归入智能团队；具体页面待按已有系统补充。</td></tr>
+      <tr><td>覆盖边界</td><td>反向核对覆盖保存的运营后台导航中全部菜单；动态权限、自定义独跳菜单及后续线上新增项未实时核实，不以“相似功能”代替对应。</td></tr>
+    </tbody></table></section>
+    <footer>依据：本轮已确认的菜单调整、用户参考图、此前现有系统导航核对及当前本地原型。未对现有系统做全量权限或功能审计。</footer>
+  </main>
+  <script src="menu-correspondence.js?v=5aa9710f551ea47b"></script>
+</body>
+</html>

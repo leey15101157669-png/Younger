@@ -1,2 +1,35 @@
-<!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PivotMatrix · 登录演示</title><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#f4f7fb;color:#172033;font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}.card{width:min(420px,calc(100% - 40px));background:#fff;border:1px solid #e6ebf3;border-radius:18px;padding:34px;box-shadow:0 16px 40px #213b6414}h1{margin:0 0 8px;font-size:24px}p{color:#758095;font-size:14px;margin:0 0 24px}label{display:block;color:#58657b;font-size:13px;margin:14px 0 6px}input{width:100%;padding:12px;border:1px solid #dfe5ef;border-radius:9px;box-sizing:border-box;font:inherit}button{width:100%;margin-top:24px;padding:12px;border:0;border-radius:9px;background:#2d8cff;color:#fff;font:inherit;cursor:pointer}.back{display:block;text-align:center;color:#2d8cff;text-decoration:none;font-size:13px;margin-top:18px}</style></head><body><main class="card"><h1>PivotMatrix</h1><p>公开原型演示入口，不连接真实账号或业务数据。</p><label>演示账号</label><input value="demo@example.com" readonly><label>演示密码</label><input value="••••••••" readonly><button onclick="location.href='index.html'">进入演示</button><a class="back" href="index.html">返回指标监控</a></main></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PivotMatrix · 登录</title>
+  <link rel="stylesheet" href="tokens.css?v=5aa9710f551ea47b">
+  <link rel="stylesheet" href="pivotmatrix-roles.css?v=5aa9710f551ea47b">
+</head>
+<body class="role-login">
+  <main class="login-layout">
+    <section class="login-brand"><span>PivotMatrix</span><h1>让业务值得被AI 重构</h1><p>构建智能体、连接业务，或直接开始一项任务</p></section>
+    <section class="login-panel" aria-labelledby="login-title">
+      <p class="login-notice" role="status" hidden>你已退出登录，请选择角色重新进入</p>
+      <h2 id="login-title">登录原型</h2><p class="login-subtitle">选择角色，预览对应的功能与首页</p>
+      <form id="role-login-form">
+        <fieldset><legend>演示角色</legend>
+          <label><input type="radio" name="role" value="admin" checked><span><strong>Admin</strong><small>所有目录菜单与管理入口</small></span></label>
+          <label><input type="radio" name="role" value="devops"><span><strong>DevOps</strong><small>构建、评测、观测、连接与资产</small></span></label>
+          <label><input type="radio" name="role" value="business"><span><strong>业务人员</strong><small>独立任务首页，不显示服务目录</small></span></label>
+        </fieldset>
+        <button class="role-primary" type="submit">进入工作空间 →</button>
+      </form>
+      <p class="login-disclaimer">仅用于角色与菜单演示，无需密码，不连接真实账号。DevOps 与业务人员按双角色账号演示，登录后可切换工作视图</p>
+    </section>
+  </main>
+  <script>
+    if(location.hash==='#signed-out')document.querySelector('.login-notice').hidden=false;
+    document.querySelector('form').addEventListener('submit',event=>{
+      event.preventDefault();
+      const role=new FormData(event.currentTarget).get('role');
+      try{sessionStorage.setItem('pivotmatrix-demo-role',role);sessionStorage.setItem('pivotmatrix-demo-available-roles',JSON.stringify(role==='admin'?['admin','devops','business']:['devops','business']));}catch(error){document.querySelector('.login-disclaimer').textContent='浏览器未允许保存登录状态，请允许本站存储后重试';return;}
+      location.href='pivotmatrix-home.html'+(role==='business'?'#business-home':'');
+    });
+  </script>
+</body></html>

@@ -1,0 +1,276 @@
+/* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V4 */
+/* Hallmark · genre: modern-minimal · macrostructure: Workbench shell + Index-First catalogue · theme: studied-DNA (source: user service-catalog image) · enrichment: none · nav: N3 Side-rail · footer: sidebar utility footer */
+:root {
+  --color-paper: oklch(99% 0.003 250);
+  --color-surface: oklch(100% 0 0);
+  --color-ink: oklch(22% 0.018 258);
+  --color-ink-soft: oklch(49% 0.012 258);
+  --color-ink-faint: oklch(55% 0.01 258);
+  --color-rule: oklch(92% 0.008 250);
+  --color-rule-strong: oklch(85% 0.012 250);
+  --color-accent: oklch(64% 0.19 251);
+  --color-accent-strong: oklch(56% 0.21 254);
+  --color-accent-ink: oklch(99% 0.003 250);
+  --color-focus: oklch(51% 0.21 254);
+  --color-shell-sidebar: oklch(98.2% 0.006 250);
+  --color-shell-sidebar-hover: oklch(94.8% 0.014 250);
+  --color-shell-sidebar-active: oklch(91.5% 0.035 251);
+  --color-shell-sidebar-rule: oklch(89.5% 0.01 250);
+  --color-shell-avatar: oklch(89% 0.03 251);
+  --color-shell-overlay: oklch(18% 0.018 258 / 0.36);
+  --color-shell-disabled: oklch(76% 0.01 250);
+  --color-shell-error: oklch(52% 0.18 25);
+  --color-shell-success: oklch(47% 0.12 151);
+  --color-catalog-banner: oklch(96.2% 0.025 246);
+  --color-catalog-ink: oklch(15.5% 0.004 250);
+  --color-catalog-muted: oklch(56.3% 0.0176 257);
+  --color-catalog-icon: oklch(65.8% 0.0164 261);
+  --color-catalog-hover: oklch(97% 0.012 250);
+  --color-worker-canvas: oklch(97.4% 0.012 258);
+  --color-worker-accent: oklch(58% 0.22 285);
+  --color-worker-accent-strong: oklch(53% 0.24 285);
+  --color-worker-accent-soft: oklch(92.5% 0.045 285);
+  --color-worker-success: oklch(48% 0.13 158);
+  --color-worker-success-soft: oklch(95.5% 0.035 158);
+  --color-worker-avatar-blue: oklch(64% 0.17 255);
+  --color-worker-avatar-green: oklch(72% 0.19 145);
+  --color-worker-avatar-cyan: oklch(72% 0.14 195);
+  --color-worker-avatar-violet: oklch(61% 0.22 300);
+  --color-worker-avatar-warm: oklch(67% 0.19 35);
+  --color-worker-avatar-ink: oklch(100% 0 0);
+  --color-task-canvas: oklch(97% 0.012 270);
+  --color-task-rail: oklch(98.6% 0.006 258);
+  --color-task-accent: oklch(61% 0.2 265);
+  --color-task-accent-strong: oklch(54% 0.22 265);
+  --color-task-accent-soft: oklch(93.5% 0.04 265);
+  --color-task-prompt: oklch(93.8% 0.018 263);
+  --color-task-placeholder: oklch(67% 0.035 258);
+  --color-skill-canvas: oklch(97.4% 0.012 266);
+  --color-skill-accent: oklch(59% 0.22 285);
+  --color-skill-accent-strong: oklch(53% 0.23 285);
+  --color-skill-accent-soft: oklch(94% 0.035 285);
+  --color-creation-canvas: oklch(97.9% 0.009 263);
+  --color-creation-preview: oklch(99.5% 0.003 263);
+  --color-creation-accent: oklch(61% 0.21 277);
+  --color-creation-accent-strong: oklch(54% 0.23 277);
+  --color-creation-accent-soft: oklch(93.5% 0.04 277);
+  --color-creation-note: oklch(92.5% 0.055 110);
+  --color-creation-note-ink: oklch(72% 0.035 100);
+  --color-creation-peach: oklch(84% 0.065 55);
+  --color-creation-cyan: oklch(84% 0.075 195);
+  --color-creation-yellow: oklch(87% 0.09 95);
+  --color-creation-rose: oklch(79% 0.1 20);
+  --color-creation-blue: oklch(77% 0.09 245);
+  --color-creation-green: oklch(82% 0.1 150);
+  --color-creation-pink: oklch(79% 0.105 342);
+  --color-creation-purple: oklch(75% 0.13 305);
+  --color-creation-violet: oklch(76% 0.11 282);
+  --color-creation-sky: oklch(79% 0.085 240);
+  --color-application-canvas: oklch(97.6% 0.012 263);
+  --color-application-visual: oklch(94.5% 0.025 260);
+  --color-application-blue: oklch(62% 0.2 258);
+  --color-application-blue-soft: oklch(82% 0.09 251);
+  --color-application-cyan: oklch(78% 0.12 190);
+  --color-application-violet: oklch(70% 0.15 295);
+  --color-application-rose: oklch(78% 0.11 15);
+  --color-application-gold: oklch(82% 0.12 78);
+  --color-application-badge: oklch(93% 0.045 285);
+  --color-application-badge-ink: oklch(52% 0.21 282);
+  --color-operations-canvas: oklch(98.3% 0.006 251);
+  --color-operations-code: oklch(96.2% 0.01 251);
+  --color-operations-code-ink: oklch(49% 0.028 251);
+  --color-operations-accent-soft: oklch(94% 0.035 251);
+  --color-operations-success-soft: oklch(94.8% 0.038 151);
+  --color-operations-success: oklch(45% 0.12 151);
+  --shadow-brand: 0 1px 2px oklch(25% 0.012 258 / 0.08);
+  --shadow-catalog-hover: 0 0.75rem 1.5rem -1rem oklch(22% 0.018 258 / 0.24);
+  --shadow-context-active: 0 0.5rem 1rem -0.75rem oklch(38% 0.12 254 / 0.34);
+  --shadow-worker-tabs: 0 0.75rem 1.75rem -1rem oklch(43% 0.18 285 / 0.34);
+  --shadow-task-panel: 0 1rem 2.5rem -1.75rem oklch(37% 0.04 265 / 0.28);
+  --shadow-creation-button: 0 0.75rem 1.5rem -0.75rem oklch(45% 0.2 277 / 0.35);
+  --shadow-creation-card: 0 1px 2px oklch(25% 0.02 263 / 0.08);
+  --shadow-creation-hover: 0 1rem 2rem -1.25rem oklch(31% 0.05 263 / 0.25);
+  --shadow-application-card: 0 1rem 2.5rem -1.75rem oklch(34% 0.04 263 / 0.24);
+  --shadow-application-hover: 0 1.25rem 3rem -1.5rem oklch(34% 0.08 263 / 0.3);
+  --shadow-operations-card: 0 1px 2px oklch(25% 0.012 251 / 0.06);
+
+  --color-user-band: oklch(97% 0.018 294);
+  --color-user-label: oklch(91% 0.054 294);
+  --color-product-band: oklch(95.5% 0.025 249);
+  --color-product-label: oklch(53% 0.19 251);
+  --color-product-feature: oklch(90% 0.07 249);
+  --color-platform-band: oklch(97% 0.021 296);
+  --color-platform-label: oklch(91.5% 0.051 294);
+  --color-platform-edge: oklch(75% 0.13 288);
+  --color-connection-band: oklch(97% 0.025 61);
+  --color-connection-label: oklch(91.5% 0.065 58);
+  --color-resource-band: oklch(97% 0.022 154);
+  --color-resource-label: oklch(90% 0.064 153);
+  --color-foundation-band: oklch(92% 0.005 250);
+
+  --font-display: "Space Grotesk", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "Space Grotesk", "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-catalog-section: 2.5rem;
+
+  --text-xs: 0.875rem;
+  --text-2xs: 0.625rem;
+  --text-nav-label: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-display: clamp(1.75rem, 2.2vw, 2.5rem);
+  --text-catalog-section: 1.25rem;
+  --text-catalog-group: 1rem;
+  --text-catalog-body: 0.875rem;
+  --text-task-title: 1.75rem;
+  --text-task-title-mobile: 1.5rem;
+  --text-application-mark: clamp(3rem, 7vw, 5rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+
+  --rule-hair: 1px;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 0.9375rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    /* Graphite navy foundation: calmer than a saturated blue canvas. */
+    --color-paper: oklch(17.5% 0.018 258);
+    --color-surface: oklch(21.5% 0.02 258);
+    --color-ink: oklch(94% 0.012 255);
+    --color-ink-soft: oklch(76% 0.018 255);
+    --color-ink-faint: oklch(63% 0.02 255);
+    --color-rule: oklch(31% 0.018 258);
+    --color-rule-strong: oklch(38% 0.022 258);
+
+    /* Keep the brand present, but avoid an electric-blue glow. */
+    --color-accent: oklch(72% 0.14 266);
+    --color-accent-strong: oklch(76% 0.13 270);
+    --color-accent-ink: oklch(18% 0.02 260);
+    --color-focus: oklch(76% 0.13 270);
+
+    --color-shell-sidebar: oklch(15% 0.018 258);
+    --color-shell-sidebar-hover: oklch(22% 0.025 258);
+    --color-shell-sidebar-active: oklch(26% 0.055 272);
+    --color-shell-sidebar-rule: oklch(28% 0.018 258);
+    --color-shell-avatar: oklch(30% 0.07 270);
+    --color-shell-overlay: oklch(7% 0.02 258 / 0.62);
+    --color-shell-disabled: oklch(51% 0.016 258);
+    --color-shell-error: oklch(70% 0.15 28);
+    --color-shell-success: oklch(74% 0.12 160);
+
+    --color-catalog-banner: oklch(24% 0.026 240);
+    --color-catalog-ink: oklch(93% 0.012 255);
+    --color-catalog-muted: oklch(67% 0.02 255);
+    --color-catalog-icon: oklch(73% 0.06 266);
+    --color-catalog-hover: oklch(24% 0.03 258);
+
+    /* Retain restrained contextual cues for the distinct workspaces. */
+    --color-worker-canvas: oklch(18.5% 0.024 270);
+    --color-worker-accent: oklch(73% 0.16 292);
+    --color-worker-accent-strong: oklch(77% 0.15 292);
+    --color-worker-accent-soft: oklch(28% 0.06 292);
+    --color-worker-success: oklch(75% 0.12 160);
+    --color-worker-success-soft: oklch(26% 0.05 160);
+    --color-worker-avatar-blue: oklch(71% 0.13 255);
+    --color-worker-avatar-green: oklch(79% 0.15 150);
+    --color-worker-avatar-cyan: oklch(79% 0.11 200);
+    --color-worker-avatar-violet: oklch(73% 0.16 300);
+    --color-worker-avatar-warm: oklch(78% 0.14 60);
+    --color-worker-avatar-ink: oklch(18% 0.02 260);
+
+    --color-task-canvas: oklch(18% 0.022 266);
+    --color-task-rail: oklch(20.5% 0.02 258);
+    --color-task-accent: oklch(73% 0.14 267);
+    --color-task-accent-strong: oklch(77% 0.13 267);
+    --color-task-accent-soft: oklch(28% 0.052 267);
+    --color-task-prompt: oklch(24% 0.028 264);
+    --color-task-placeholder: oklch(63% 0.025 258);
+
+    --color-skill-canvas: oklch(18.5% 0.024 274);
+    --color-skill-accent: oklch(74% 0.16 292);
+    --color-skill-accent-strong: oklch(78% 0.15 292);
+    --color-skill-accent-soft: oklch(28% 0.055 292);
+
+    --color-creation-canvas: oklch(18.5% 0.018 263);
+    --color-creation-preview: oklch(22% 0.018 263);
+    --color-creation-accent: oklch(74% 0.14 277);
+    --color-creation-accent-strong: oklch(78% 0.13 277);
+    --color-creation-accent-soft: oklch(28% 0.05 277);
+    --color-creation-note: oklch(29% 0.055 105);
+    --color-creation-note-ink: oklch(82% 0.07 105);
+    --color-creation-peach: oklch(72% 0.09 55);
+    --color-creation-cyan: oklch(75% 0.08 195);
+    --color-creation-yellow: oklch(80% 0.1 95);
+    --color-creation-rose: oklch(73% 0.1 20);
+    --color-creation-blue: oklch(72% 0.09 245);
+    --color-creation-green: oklch(76% 0.09 150);
+    --color-creation-pink: oklch(73% 0.095 342);
+    --color-creation-purple: oklch(71% 0.11 305);
+    --color-creation-violet: oklch(72% 0.1 282);
+    --color-creation-sky: oklch(75% 0.075 240);
+
+    --color-application-canvas: oklch(18.5% 0.018 263);
+    --color-application-visual: oklch(25% 0.03 260);
+    --color-application-blue: oklch(73% 0.15 258);
+    --color-application-blue-soft: oklch(31% 0.07 251);
+    --color-application-cyan: oklch(76% 0.1 190);
+    --color-application-violet: oklch(73% 0.12 295);
+    --color-application-rose: oklch(75% 0.09 15);
+    --color-application-gold: oklch(80% 0.1 78);
+    --color-application-badge: oklch(29% 0.055 285);
+    --color-application-badge-ink: oklch(82% 0.1 282);
+
+    --color-operations-canvas: oklch(18.5% 0.018 258);
+    --color-operations-code: oklch(22% 0.022 258);
+    --color-operations-code-ink: oklch(76% 0.026 255);
+    --color-operations-accent-soft: oklch(27% 0.05 268);
+    --color-operations-success-soft: oklch(26% 0.045 160);
+    --color-operations-success: oklch(75% 0.11 160);
+
+    --color-user-band: oklch(25% 0.035 294);
+    --color-user-label: oklch(80% 0.08 294);
+    --color-product-band: oklch(25% 0.04 249);
+    --color-product-label: oklch(80% 0.11 251);
+    --color-product-feature: oklch(29% 0.07 249);
+    --color-platform-band: oklch(25% 0.035 296);
+    --color-platform-label: oklch(80% 0.075 294);
+    --color-platform-edge: oklch(72% 0.11 288);
+    --color-connection-band: oklch(25% 0.035 61);
+    --color-connection-label: oklch(81% 0.08 58);
+    --color-resource-band: oklch(25% 0.032 154);
+    --color-resource-label: oklch(80% 0.07 153);
+    --color-foundation-band: oklch(25% 0.015 250);
+
+    --shadow-brand: 0 1px 2px oklch(5% 0.02 258 / 0.32);
+    --shadow-catalog-hover: 0 0.75rem 1.5rem -1rem oklch(5% 0.02 258 / 0.5);
+    --shadow-context-active: 0 0.5rem 1rem -0.75rem oklch(10% 0.08 270 / 0.5);
+    --shadow-worker-tabs: 0 0.75rem 1.75rem -1rem oklch(10% 0.1 292 / 0.48);
+    --shadow-task-panel: 0 1rem 2.5rem -1.75rem oklch(5% 0.02 266 / 0.55);
+    --shadow-creation-button: 0 0.75rem 1.5rem -0.75rem oklch(12% 0.1 277 / 0.5);
+    --shadow-creation-card: 0 1px 2px oklch(5% 0.02 263 / 0.3);
+    --shadow-creation-hover: 0 1rem 2rem -1.25rem oklch(5% 0.03 263 / 0.45);
+    --shadow-application-card: 0 1rem 2.5rem -1.75rem oklch(5% 0.03 263 / 0.45);
+    --shadow-application-hover: 0 1.25rem 3rem -1.5rem oklch(5% 0.06 263 / 0.52);
+    --shadow-operations-card: 0 1px 2px oklch(5% 0.02 251 / 0.28);
+  }
+}

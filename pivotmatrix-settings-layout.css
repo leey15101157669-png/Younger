@@ -1,0 +1,18 @@
+/* Match the existing system's grouped settings navigation. */
+.remaining-admin-page.ra-settings{display:grid;grid-template-columns:208px minmax(0,1fr);grid-template-rows:auto 1fr auto auto;height:calc(100vh - 48px);min-height:580px;overflow:hidden}
+.remaining-admin-page.ra-settings[hidden]{display:none}
+.ra-settings .ra-tabs{grid-column:1;grid-row:1/5;display:block;max-height:none;overflow-y:auto;margin:0;padding:12px 8px;border:0;border-right:1px solid var(--color-rule)}
+.ra-settings .ra-page-header{grid-column:2;grid-row:1;padding:18px 24px}
+.ra-settings .ra-body{grid-column:2;grid-row:2;min-height:0;overflow-y:auto}
+.ra-settings .ra-footnote{grid-column:2;grid-row:3;margin-top:0}
+.ra-settings .ra-status{grid-column:2;grid-row:4;margin-top:0}
+.ra-settings .ra-tabs button{display:block;width:100%;padding:9px 12px;border:0;border-radius:7px;font-size:13px;text-align:left;white-space:normal;line-height:1.5;font-weight:400;margin:1px 0}
+.ra-settings .ra-tabs button.active{background:#eeedfc;color:#6151cd;font-weight:500}
+.ra-settings .ra-settings-caption{font-size:11px;color:var(--color-ink-faint);font-weight:600;letter-spacing:.5px;margin:2px 12px 10px}
+.ra-settings-group{margin-top:6px}
+.ra-settings-group summary{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:10px 12px;font-size:12px;font-weight:600;color:var(--color-ink-soft);list-style:none}
+.ra-settings-group summary::-webkit-details-marker{display:none}
+.ra-settings-group summary::after{content:'›';font-size:16px;font-weight:400;transform:rotate(0deg)}
+.ra-settings-group[open] summary::after{transform:rotate(90deg)}
+.ra-settings .ra-settings-group button{padding-left:24px;font-size:12px}
+@media(max-width:760px){.remaining-admin-page.ra-settings{grid-template-columns:170px minmax(0,1fr)}.ra-settings .ra-page-header,.ra-settings .ra-body{padding:16px}.ra-settings .ra-tabs button{font-size:12px}}

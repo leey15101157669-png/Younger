@@ -1,0 +1,46 @@
+.operations-menu-group summary { padding: 12px 16px; cursor: pointer; font-size: 13px; font-weight: 600; }
+.pivotone-page { padding: 24px; color: var(--color-ink); }
+.pivotone-page header h1 { font-size: 24px; margin: 0; }
+.pivotone-page header p,.po-heading p,.po-content > p,.po-content small { color: var(--color-ink-soft); font-size: 13px; }
+.po-layout { display:grid; grid-template-columns:160px minmax(0,1fr); gap:32px; margin-top:28px; padding:24px; border:1px solid var(--color-rule); border-radius:16px; background:var(--color-paper); }
+.po-layout > nav { border-right:1px solid var(--color-rule); padding-right:16px; }
+.po-layout button,.po-layout input,.po-layout select { font:inherit; border:1px solid var(--color-rule); border-radius:8px; padding:10px 14px; background:var(--color-paper); color:var(--color-ink); }
+.po-layout button { cursor:pointer; }
+.po-layout button:focus-visible { outline:2px solid var(--color-accent); outline-offset:2px; }
+.po-layout > nav button { display:block; width:100%; text-align:left; margin-bottom:8px; border-color:transparent; }
+.po-layout > nav button[aria-pressed=true] { background:var(--color-catalog-hover); font-weight:600; }
+.po-content { min-width:0; }
+.po-content h2 { font-size:20px; margin:0 0 20px; }
+.po-heading { display:flex; align-items:start; justify-content:space-between; gap:16px; margin-bottom:20px; }
+.po-heading h2 { margin-bottom:8px; }
+.po-heading > span { white-space:nowrap; color:var(--color-ink-soft); font-size:13px; background:var(--color-catalog-hover); border-radius:20px; padding:6px 12px; }
+.po-cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-bottom:20px; }
+.po-cards article { display:flex; flex-direction:column; padding:20px; border:1px solid var(--color-rule); border-radius:12px; }
+.po-cards article > div { display:flex; gap:12px; justify-content:space-between; }
+.po-cards h3 { font-size:16px; margin:0; }
+.po-cards article span { font-size:12px; white-space:nowrap; color:var(--color-ink-soft); }
+.po-cards article .po-live { color:var(--color-accent-strong); }
+.po-cards article p { font-size:13px; line-height:1.65; color:var(--color-ink-soft); height:64.35px; overflow:hidden; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; margin:12px 0 16px; }
+.po-cards article > button { margin-top:auto; width:100%; }
+.po-layout .po-primary { background:var(--color-accent); color:var(--color-paper); border-color:var(--color-accent); }
+.po-tenant { display:grid; gap:10px; max-width:360px; margin-bottom:28px; }
+.po-models { border:1px solid var(--color-rule); border-radius:12px; padding:16px; }
+.po-models label { display:flex; gap:14px; align-items:center; padding:14px; flex-wrap:wrap; }
+.po-models strong { font-size:14px; overflow-wrap:anywhere; }
+.po-models span { border-radius:16px; padding:2px 10px; background:var(--color-catalog-hover); color:var(--color-ink-soft); font-size:12px; }
+.po-models input { accent-color:var(--color-accent); }
+.po-content footer { display:flex; justify-content:end; margin:20px 0; }
+.po-member-form { display:flex; gap:16px; flex-wrap:wrap; align-items:end; margin:20px 0; }
+.po-member-form label { display:grid; gap:8px; font-size:13px; }
+.po-table { overflow:auto; }.po-table table { width:100%; border-collapse:collapse; text-align:left; font-size:14px; }.po-table td,.po-table th { padding:14px; border-bottom:1px solid var(--color-rule); }
+.po-empty { padding:48px 16px; text-align:center; color:var(--color-ink-soft); }
+.po-status { min-height:24px; font-size:13px; }
+.po-directory-filters { display:flex; flex-wrap:wrap; gap:20px; margin:24px 0; }
+.po-directory-filters label { display:grid; gap:8px; min-width:180px; font-size:14px; }
+.po-model-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.po-model-columns h3 { font-size:16px; }
+.po-content footer { align-items:center; gap:16px; flex-wrap:wrap; }
+.po-content footer span { margin-right:auto; font-size:13px; color:var(--color-ink-soft); }
+@media(max-width:1000px){.po-model-columns{grid-template-columns:1fr;}}
+@media(max-width:1200px){.po-cards{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:760px){.po-layout{grid-template-columns:1fr;padding:16px;gap:16px;}.po-layout>nav{border:0;display:flex;}.po-cards{grid-template-columns:1fr;}.pivotone-page{padding:12px;}}

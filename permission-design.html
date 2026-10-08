@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>权限设计 · PivotMatrix</title>
+  <link rel="stylesheet" href="tokens.css?v=5aa9710f551ea47b">
+  <link rel="stylesheet" href="menu-correspondence.css?v=5aa9710f551ea47b">
+</head>
+<body>
+  <main>
+    <header class="document-nav"><span>PivotMatrix · 权限设计</span><nav><a href="menu-correspondence.html">需求说明</a> · <a href="pivotmatrix-home.html">返回服务目录</a></nav></header>
+    <h1>账号角色与权限设计</h1>
+    <p class="lede">分别定义模块可见性、数据范围与操作控制权，作为研发实现及验收依据。</p>
+    <aside class="reading-note"><strong>角色规则（2026-09-28 更新）</strong><p>Admin 可见所有模块、所有数据，拥有全部控制权。DevOps 人员可见除平台治理下管理模块以外的所有目录；组织与成员、客户端管理、模型管理、模型配额、超管后台均不可进入。</p><p>业务人员进入独立任务首页，以新建任务替代服务目录，不展示目录菜单；保留创作中心、个人中心和消息中心。登录页提供 Admin、DevOps、业务人员三种演示角色。登录后可通过切换角色按钮切换已授权的工作视图，DevOps 与业务人员按双角色账号演示，非 Admin 登录不提供 Admin 切换入口。</p><p>以下“用户账号”的目录权限按 DevOps 人员理解，并以以上最新模块规则为准。IM 渠道与日志的数据权限仍限定本人，其他用户数据不可查看或操作。</p><p>当前原型仅演示前端角色切换和路由限制，未接入真实认证、服务端授权或数据隔离，不能作为生产安全机制。</p></aside>
+    <section aria-labelledby="matrix-title">
+      <h2 id="matrix-title">菜单权限对应表</h2>
+      <table>
+        <thead><tr><th>功能</th><th>当前原型入口</th><th>Admin 账号</th><th>用户账号</th></tr></thead>
+        <tbody>
+          <tr><td>超管后台</td><td>管理 → 超管后台</td><td>可见、可访问、可操作全部功能</td><td>隐藏入口，禁止访问全部后台页面及操作</td></tr>
+          <tr><td>模型配额</td><td>管理 → 模型配额</td><td>可见、可访问、可配置</td><td>隐藏入口，禁止访问及配置</td></tr>
+          <tr><td>客户端管理</td><td>管理 → 客户端管理</td><td>可见、可访问、可管理</td><td>隐藏入口，禁止访问及管理</td></tr>
+          <tr><td>组织与成员</td><td>管理 → 组织与成员</td><td>可见、可访问、可管理</td><td>隐藏整组及全部子菜单：成员管理、部门与组织、菜单权限</td></tr>
+          <tr><td>模型管控</td><td>模型管理 → 模型管控</td><td>可见、可访问、可配置</td><td>隐藏入口，禁止访问及配置</td></tr>
+          <tr><td>其余功能</td><td>除上述五类之外的菜单</td><td>全部模块、全部数据及全部控制权</td><td>菜单可见不代表拥有全量数据或控制权；用户归属数据遵循下方隔离规则</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section aria-labelledby="data-title">
+      <h2 id="data-title">数据范围与控制权</h2>
+      <table>
+        <thead><tr><th>对象</th><th>Admin 账号</th><th>用户账号</th></tr></thead>
+        <tbody>
+          <tr><td>IM 渠道配置</td><td>可查看所有用户的渠道配置，拥有新增、修改、删除、启停等全部控制权</td><td>仅可查看当前用户归属的渠道配置与状态；其他用户的渠道不展示，不可修改、删除、启停或绑定操作</td></tr>
+          <tr><td>IM 调用日志</td><td>可查看所有用户的日志、详情及统计，拥有该模块支持的全部管理操作权限</td><td>仅可查看、筛选和观测当前用户归属的调用日志、详情及统计；不可查看或操作其他用户记录</td></tr>
+          <tr><td>关联记录与观测数据</td><td>可查看全量关联数据并执行各模块支持的控制操作</td><td>渠道关联记录、调用详情、统计及导出等均按当前用户归属过滤；不得通过关联页面获取或影响其他用户数据</td></tr>
+        </tbody>
+      </table>
+      <p>普通用户已明确授权的是本人数据的查看与观测。本人数据的新增、编辑、删除、启停等写操作尚未明确授权，不因菜单可见而自动开放；后续按具体操作单独确认。</p>
+    </section>
+    <section aria-labelledby="implementation-title">
+      <h2 id="implementation-title">实现要求</h2>
+      <ul>
+        <li>按已登录账号的角色统一控制服务目录、左侧菜单、搜索结果、快捷入口及页面内的关联入口；用户账号不得通过其他入口进入上述受限功能。</li>
+        <li>组织与成员及超管后台按整个功能组控制权限，子菜单和直接链接遵循同一规则。</li>
+        <li>用户直接打开受限地址时展示“无权限访问”，相关接口也应校验权限并拒绝请求。</li>
+        <li>切换账号或角色后重新计算可见菜单；若当前页面已无权限，则返回服务目录。</li>
+        <li>隐藏“模型管控”不等于禁止用户使用模型；用户可用的模型范围由 Admin 的配置决定。</li>
+        <li>数据权限必须由服务端根据已认证的当前用户身份校验，不能信任前端传入的用户 ID、筛选条件或隐藏按钮。Admin 全量访问也必须先通过角色校验。</li>
+        <li>列表、详情、搜索、统计、导出及写操作统一校验数据归属。普通用户篡改记录 ID 或用户 ID 后，不得读取、更新、删除或触发其他用户资源。</li>
+        <li>IM 渠道与调用日志的用户归属字段及关联判定规则须在接口设计中明确；缺失或无法确认归属的数据不得默认向普通用户开放。</li>
+        <li>退出或切换账号时清除旧账号的数据缓存、列表与统计，避免跨账号数据泄露。</li>
+      </ul>
+    </section>
+    <section aria-labelledby="acceptance-title">
+      <h2 id="acceptance-title">验收标准</h2>
+      <ul>
+        <li>Admin 登录后，全部模块、所有用户的数据均可访问，并可执行各模块支持的全部控制操作。</li>
+        <li>用户登录后，五类受限功能不出现在任何菜单及搜索结果中，直接访问也无法绕过权限。</li>
+        <li>普通用户仍能看到推理模型、多模态模型等其余菜单。</li>
+        <li>使用用户 A、用户 B 各自的 IM 渠道与调用日志验证：A 只能查看和观测 A 的数据，B 只能查看和观测 B 的数据；Admin 可查看和管理两者。</li>
+        <li>普通用户在搜索、详情、统计及导出中均不能获取他人数据；更改请求中的记录 ID 或用户 ID 也不能越权读写。</li>
+        <li>当前用户无数据时展示空状态，不展示其他用户记录作为补位；切换账号后不保留上一账号的数据。</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

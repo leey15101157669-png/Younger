@@ -1,0 +1,5 @@
+/* Shared geometry; layout and contextual colours remain owned by existing components. */
+svg.pivot-line-icon{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+svg.pivot-line-icon path{fill:none;stroke:inherit;stroke-width:inherit;stroke-linecap:inherit;stroke-linejoin:inherit}
+svg.service-icon.pivot-line-icon{stroke:var(--color-catalog-icon)}
+.service-link:hover svg.service-icon.pivot-line-icon,.context-service-item.is-active svg.service-icon.pivot-line-icon{stroke:var(--color-accent-strong)}

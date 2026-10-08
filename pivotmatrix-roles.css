@@ -1,0 +1,43 @@
+/* Role presentation follows the existing PivotMatrix tokens. */
+html[data-role="signed-out"] body { visibility: hidden; }
+html[data-role="devops"] .catalog-section--management { display: none !important; }
+html[data-role="business"] .service-catalog,
+html[data-role="business"] [data-context-nav],
+html[data-role="business"] [data-operations-nav],
+html[data-role="business"] .business-catalog-hidden,
+html[data-role="business"] .primary-nav > a[href$="#application-center"],
+html[data-role="business"] .explore-nav-group a[href$="#new-task"],
+html[data-role="business"] .explore-nav-group a[href$="#skills-center"] { display: none !important; }
+.is-business-home .main-content > section:not(.business-welcome) { display: none !important; }
+.business-welcome { max-width: 800px; margin: clamp(48px,12vh,140px) auto; padding: 32px; }
+.business-eyebrow { color: var(--color-ink-soft); font-size: 14px; }
+.business-welcome h1 { font-size: clamp(28px,4vw,44px); font-weight: 600; margin: 16px 0; }
+.business-welcome > p:not(.business-eyebrow) { color: var(--color-ink-soft); margin-bottom: 32px; }
+.business-hints { display: flex; flex-wrap: wrap; gap: 24px; color: var(--color-ink-soft); margin-top: 40px; font-size: 13px; }
+.role-primary { display: inline-flex; justify-content: center; align-items: center; padding: 14px 24px; background: var(--color-accent); color: var(--color-paper); border: 0; border-radius: 8px; font: inherit; text-decoration: none; cursor: pointer; }
+.role-primary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.role-primary:hover { background: var(--color-accent-strong); }
+.role-login { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); }
+.role-login * { box-sizing: border-box; }
+.login-layout { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+.login-brand { background: var(--color-catalog-hover); padding: clamp(32px,7vw,100px); display: flex; flex-direction: column; justify-content: center; }
+.login-brand > span { font-size: 24px; font-weight: 600; margin-bottom: 64px; }
+.login-brand h1 { font-size: clamp(28px,3vw,44px); font-weight: 500; line-height: 1.5; }
+.login-brand p,.login-subtitle,.login-disclaimer { color: var(--color-ink-soft); line-height: 1.6; }
+.login-panel { width: min(100%,500px); margin: auto; padding: 40px; }
+.login-panel h2 { font-size: 28px; margin: 0 0 8px; }
+.login-panel fieldset { border: 0; padding: 0; margin: 28px 0 24px; }
+.login-panel legend { font-size: 13px; margin-bottom: 12px; }
+.login-panel label { display: flex; align-items: center; gap: 12px; padding: 14px; border: 1px solid var(--color-rule); border-radius: 8px; margin-bottom: 10px; cursor: pointer; }
+.login-panel label:has(input:checked) { border-color: var(--color-accent); background: var(--color-catalog-hover); }
+.login-panel input { accent-color: var(--color-accent); }
+.login-panel strong,.login-panel small { display: block; }
+.login-panel strong { font-size: 15px; font-weight: 600; }
+.login-panel small { color: var(--color-ink-soft); font-size: 12px; margin-top: 4px; }
+.login-panel .role-primary { width: 100%; }
+.login-disclaimer { font-size: 12px; margin-top: 20px; }
+.login-notice { padding: 12px; background: var(--color-catalog-hover); color: var(--color-ink); font-size: 13px; }
+.role-switch-button { display:block; margin:8px; padding:8px 12px; border:1px solid var(--color-rule); border-radius:8px; background:var(--color-paper); color:var(--color-ink-soft); font:inherit; font-size:12px; cursor:pointer; }
+.role-switch-dialog { width:min(440px,calc(100vw - 48px)); box-sizing:border-box; border:1px solid var(--color-rule); border-radius:16px; background:var(--color-paper); color:var(--color-ink); padding:24px; }
+.role-switch-dialog::backdrop { background:#17223966; }.role-switch-dialog header { display:flex;align-items:center;justify-content:space-between; }.role-switch-dialog h2 { margin:0;font-size:20px; }.role-switch-dialog header button { border:0;background:none;color:inherit;font-size:24px;cursor:pointer; }.role-switch-dialog p,.role-switch-dialog small { color:var(--color-ink-soft);font-size:13px;line-height:1.6; }.role-switch-dialog [data-switch-role] { display:block;width:100%;text-align:left;border:1px solid var(--color-rule);border-radius:10px;background:var(--color-paper);color:var(--color-ink);padding:14px;margin:10px 0;cursor:pointer; }.role-switch-dialog [data-switch-role][aria-current="true"] { background:var(--color-catalog-hover);border-color:var(--color-accent);cursor:default; }.role-switch-dialog strong,.role-switch-dialog span { display:block; }.role-switch-dialog span { margin-top:5px;font-size:12px;color:var(--color-ink-soft); }
+@media(max-width:760px) { .login-layout { grid-template-columns: 1fr; }.login-brand { padding: 24px; }.login-brand > span { margin-bottom: 0; }.login-brand h1,.login-brand p { display:none; }.login-panel { padding: 24px; }.business-welcome { padding:16px; } }

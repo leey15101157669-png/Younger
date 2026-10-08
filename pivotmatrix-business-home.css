@@ -1,0 +1,38 @@
+/* Hallmark · macrostructure: Narrative Workflow · genre: modern-minimal · theme: existing PivotMatrix tokens · nav: existing side rail · footer: inline guidance · enrichment: none */
+/* Hallmark · pre-emit critique: P4 H4 E4 S5 R5 V4 */
+.business-welcome { box-sizing:border-box; max-width:1160px; width:100%; margin:0 auto; padding:var(--space-md) var(--space-xs) var(--space-2xl); color:var(--color-ink); font-family:var(--font-body); }
+.business-welcome * { box-sizing:border-box; min-width:0; }
+.business-welcome h1,.business-welcome h2,.business-welcome h3 { font-style:normal; overflow-wrap:anywhere; }
+.bh-heading { display:flex; justify-content:space-between; gap:var(--space-md); color:var(--color-ink-soft); font-size:var(--text-xs); margin-bottom:var(--space-xl); }
+.bh-heading span:last-child { color:var(--color-accent-strong); }
+.bh-intro { display:grid; gap:var(--space-xl); padding:var(--space-xl); background:var(--color-catalog-hover); border-radius:12px; }
+.business-welcome h1 { font-size:var(--text-display); line-height:1.35; font-weight:600; margin:0 0 var(--space-md); }
+.business-welcome h2 { font-size:var(--text-xl); line-height:1.4; font-weight:600; margin:0 0 var(--space-lg); }
+.business-welcome h3 { font-size:var(--text-base); font-weight:600; margin:0 0 var(--space-xs); }
+.business-welcome p { font-size:var(--text-sm); color:var(--color-ink-soft); line-height:1.8; margin:0; }
+.bh-actions { display:flex; gap:var(--space-lg); align-items:center; flex-wrap:wrap; margin-top:var(--space-lg); }
+.business-welcome a { white-space:nowrap; text-decoration:none; min-height:44px; display:inline-flex; align-items:center; }
+.business-welcome a:focus-visible { outline:2px solid var(--color-focus);outline-offset:4px; }
+.business-welcome a:active { transform:translateY(1px); }
+.business-welcome .role-primary { font-size:var(--text-xs); color:var(--color-accent-ink); background:var(--color-accent-strong);padding:var(--space-sm) var(--space-lg); }
+.business-welcome .role-primary:hover { background:var(--color-focus); }
+.bh-secondary,.bh-destination a { color:var(--color-accent-strong);font-size:var(--text-xs); }
+.bh-secondary:hover,.bh-destination a:hover { text-decoration:underline;text-underline-offset:4px; }
+.bh-example { border-top:1px solid var(--color-rule-strong); padding-top:var(--space-lg); }
+.bh-example h2 { font-size:var(--text-xs);color:var(--color-ink-soft);margin-bottom:var(--space-sm); }
+.bh-example blockquote { margin:0 0 var(--space-md);font-size:var(--text-lg);line-height:1.8; }
+.bh-example p { font-size:var(--text-xs); }
+.bh-main { display:grid;gap:var(--space-2xl);margin-top:var(--space-2xl); }
+.bh-guide ol { list-style:none;padding:0;margin:0; }
+.bh-guide li { display:grid;grid-template-columns:36px minmax(0,1fr);gap:var(--space-md);padding:var(--space-lg) 0;border-bottom:1px solid var(--color-rule); }
+.bh-guide li:first-child { padding-top:0; }
+.bh-guide li:last-child { border:0; }
+.bh-guide li>span { font-size:var(--text-xl);font-variant-numeric:tabular-nums;color:var(--color-accent-strong);line-height:1.3; }
+.bh-guide small { display:block;color:var(--color-ink-soft);font-size:var(--text-xs);margin-top:var(--space-xs);line-height:1.6; }
+.bh-workspace { border-top:1px solid var(--color-rule);padding-top:var(--space-lg); }
+.bh-destination { margin-bottom:var(--space-lg);border-bottom:1px solid var(--color-rule);padding-bottom:var(--space-sm); }
+.bh-tip { padding-top:var(--space-xs); }.bh-tip h3,.bh-tip p { font-size:var(--text-xs); }
+.bh-footer { margin-top:var(--space-xl);padding-top:var(--space-lg);border-top:1px solid var(--color-rule);color:var(--color-ink-soft);font-size:var(--text-xs);line-height:1.7; }
+@media(min-width:70rem){.business-welcome{padding:var(--space-xl) var(--space-xl) var(--space-2xl);}.bh-intro{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:var(--space-2xl);padding:var(--space-2xl);}.bh-example{border-top:0;border-left:1px solid var(--color-rule-strong);padding-top:0;padding-left:var(--space-xl);}.bh-main{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);}.bh-workspace{border-top:0;border-left:1px solid var(--color-rule);padding-top:0;padding-left:var(--space-xl);}}
+@media(max-width:30rem){.bh-intro{padding:var(--space-lg);}.bh-heading{flex-wrap:wrap;}.bh-guide li{gap:var(--space-xs);}.bh-actions{gap:var(--space-xs);}}
+html[data-role="business"],html[data-role="business"] body { overflow-x:clip; }
